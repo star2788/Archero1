@@ -11,10 +11,11 @@ public class PlayerController : MonoBehaviour{
 
     //플레이어의 리지드바디
     private Rigidbody playerRigidbody;
-
+    private Animator playerAnimator;
     void Start() {
         //플레이어 리지드바디 컴포넌트 가져오기
         playerRigidbody = GetComponent<Rigidbody>();
+        playerAnimator = GetComponent<Animator>();
     }
 
 
@@ -22,8 +23,10 @@ public class PlayerController : MonoBehaviour{
     private void FixedUpdate() {
         Rotate();
         Move();
+        Debug.Log(joystick.Vertical);
+        playerAnimator.SetFloat("Move", joystick.Direction.magnitude);
+        playerAnimator.SetBool("Attack", joystick.onPointer);
 
-       
     }
 
     private void Move() {
