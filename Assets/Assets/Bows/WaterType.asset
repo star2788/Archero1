@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f1d36c9b7ed6943af18b7cb35270c6, type: 3}
+  m_Name: WaterType
+  m_EditorClassIdentifier: 
+  elementalType: 2
+  shotClip: {fileID: 8300000, guid: 77e16104b41b88d4598eb278a1d8b756, type: 3}
+  damage: 25
+  projectileSpeed: 0.8
+  timeBetFire: 1
+  count: 1
+  projectile: {fileID: 0}
+  arrowLineColor: {r: 0, g: 0, b: 0, a: 0}

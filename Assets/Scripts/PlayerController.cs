@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
     //조이스틱 에셋
-    public Joystick joystick;
+    private Joystick joystick;
     //플레이어 이동 속도
     public float moveSpeed = 5f;
 
@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody playerRigidbody;
     private Animator playerAnimator;
     void Start() {
+        joystick = Joystick.instance;
+        if(joystick == null) {
+            Debug.LogError("Joystick 인스턴스를 찾을 수 없습니다.");
+        }
         //플레이어 리지드바디 컴포넌트 가져오기
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
@@ -23,9 +27,8 @@ public class PlayerController : MonoBehaviour{
     private void FixedUpdate() {
         Rotate();
         Move();
-        Debug.Log(joystick.Vertical);
+        //Debug.Log(joystick.Vertical);
         playerAnimator.SetFloat("Move", joystick.Direction.magnitude);
-        playerAnimator.SetBool("Attack", joystick.onPointer);
 
     }
 
